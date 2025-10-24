@@ -1,0 +1,75 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+venv.bak/
+
+# Envs and credentials
+.env
+.env.*
+local_settings.py
+
+# Django
+*.log
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+# No ignorar las migraciones para mantener historial de DB schema:
+# **/migrations/
+# Si quieres ignorarlas explícitamente (no recomendado), descomenta la siguiente línea:
+# */migrations/*.py
+
+# Testing, coverage and caches
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+.hypothesis/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# IDEs
+.idea/
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs, runtime files
+*.pid
+*.seed
+*.pid.lock
+
+# Celery
+celerybeat-schedule
+
+# Sentry
+.sentryclirc
+
+# Node (if front-end)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Secrets / keys
+*.pem
+*.key
