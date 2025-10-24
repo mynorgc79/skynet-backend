@@ -30,7 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # API endpoints
-    path('api/auth/', include('apps.usuarios.urls')),
+    path('api/usuarios/', include('apps.usuarios.urls')),
 
     # API Documentation
     path('swagger<format>/', schema_view.without_ui(cache_timeout=0),

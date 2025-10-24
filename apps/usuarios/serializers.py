@@ -153,16 +153,18 @@ class UsuarioSerializer(serializers.ModelSerializer):
 
 class UsuarioCreateSerializer(serializers.ModelSerializer):
     """
-    Serializer para crear usuarios
+    Serializer para crear usuarios con validaciones completas
     """
     password = serializers.CharField(
         write_only=True,
         min_length=8,
-        style={'input_type': 'password'}
+        style={'input_type': 'password'},
+        help_text="Mínimo 8 caracteres"
     )
     confirm_password = serializers.CharField(
         write_only=True,
-        style={'input_type': 'password'}
+        style={'input_type': 'password'},
+        help_text="Debe coincidir con la contraseña"
     )
 
     class Meta:
@@ -177,13 +179,69 @@ class UsuarioCreateSerializer(serializers.ModelSerializer):
             'confirm_password'
         ]
 
+    def validate_email(self, value):
+        """Validar email único"""
+        validate_guatemala_email(value)
+
+        if Usuario.objects.filter(email=value).exists():
+            raise serializers.ValidationError("Este email ya está registrado.")
+        return value
+
+    def validate_telefono(self, value):
+        """Validar teléfono guatemalteco"""
+        if value:
+            validate_guatemala_phone(value)
+        return value
+
+    def validate_nombre(self, value):
+        """Validar nombre"""
+        if not value or len(value.strip()) < 2:
+            raise serializers.ValidationError(
+                "El nombre debe tener al menos 2 caracteres.")
+        return value.strip().title()
+
+    def validate_apellido(self, value):
+        """Validar apellido"""
+        if not value or len(value.strip()) < 2:
+            raise serializers.ValidationError(
+                "El apellido debe tener al menos 2 caracteres.")
+        return value.strip().title()
+
+    def validate_rol(self, value):
+        """Validar rol"""
+        roles_validos = [choice[0] for choice in Usuario.RolChoices.choices]
+        if value not in roles_validos:
+            raise serializers.ValidationError(
+                f"Rol inválido. Opciones: {', '.join(roles_validos)}")
+        return value
+
+    def validate_password(self, value):
+        """Validar fortaleza de contraseña"""
+        if len(value) < 8:
+            raise serializers.ValidationError(
+                "La contraseña debe tener al menos 8 caracteres.")
+
+        # Verificar que tenga al menos una letra
+        if not any(c.isalpha() for c in value):
+            raise serializers.ValidationError(
+                "La contraseña debe contener al menos una letra.")
+
+        # Verificar que tenga al menos un número
+        if not any(c.isdigit() for c in value):
+            raise serializers.ValidationError(
+                "La contraseña debe contener al menos un número.")
+
+        return value
+
     def validate(self, attrs):
+        """Validaciones generales"""
         password = attrs.get('password')
         confirm_password = attrs.get('confirm_password')
 
+        # Verificar que las contraseñas coincidan
         if password != confirm_password:
             raise serializers.ValidationError(
-                'Las contraseñas no coinciden.'
+                {"confirm_password": "Las contraseñas no coinciden."}
             )
 
         # Remover confirm_password antes de crear el usuario
@@ -191,12 +249,59 @@ class UsuarioCreateSerializer(serializers.ModelSerializer):
         return attrs
 
     def create(self, validated_data):
+        """Crear usuario con contraseña encriptada"""
         password = validated_data.pop('password')
-        user = Usuario.objects.create_user(
+
+        usuario = Usuario.objects.create_user(
             password=password,
             **validated_data
         )
-        return user
+
+        return usuario
+
+
+class UsuarioUpdateSerializer(serializers.ModelSerializer):
+    """
+    Serializer para actualizar usuarios (sin contraseña)
+    """
+
+    class Meta:
+        model = Usuario
+        fields = [
+            'nombre',
+            'apellido',
+            'telefono',
+            'rol',
+            'activo'
+        ]
+
+    def validate_nombre(self, value):
+        """Validar nombre"""
+        if not value or len(value.strip()) < 2:
+            raise serializers.ValidationError(
+                "El nombre debe tener al menos 2 caracteres.")
+        return value.strip().title()
+
+    def validate_apellido(self, value):
+        """Validar apellido"""
+        if not value or len(value.strip()) < 2:
+            raise serializers.ValidationError(
+                "El apellido debe tener al menos 2 caracteres.")
+        return value.strip().title()
+
+    def validate_telefono(self, value):
+        """Validar teléfono guatemalteco"""
+        if value:
+            validate_guatemala_phone(value)
+        return value
+
+    def validate_rol(self, value):
+        """Validar rol"""
+        roles_validos = [choice[0] for choice in Usuario.RolChoices.choices]
+        if value not in roles_validos:
+            raise serializers.ValidationError(
+                f"Rol inválido. Opciones: {', '.join(roles_validos)}")
+        return value
 
 
 class ChangePasswordSerializer(serializers.Serializer):
