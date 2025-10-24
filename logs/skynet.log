@@ -1,0 +1,344 @@
+INFO 2025-10-23 20:47:52,937 autoreload 9 140603886050088 Watching for file changes with StatReloader
+INFO 2025-10-23 20:48:21,077 autoreload 9 140603886050088 /code/apps/usuarios/managers.py changed, reloading.
+INFO 2025-10-23 20:48:56,557 autoreload 12 139758523394856 Watching for file changes with StatReloader
+INFO 2025-10-23 20:58:20,547 autoreload 8 140600817249064 Watching for file changes with StatReloader
+INFO 2025-10-23 21:27:39,997 autoreload 8 139826986613544 Watching for file changes with StatReloader
+WARNING 2025-10-23 21:28:17,737 log 8 139826916703032 Not Found: /
+WARNING 2025-10-23 21:28:17,770 basehttp 8 139826916703032 "GET / HTTP/1.1" 404 3055
+WARNING 2025-10-23 21:28:18,401 log 8 139826916703032 Not Found: /favicon.ico
+WARNING 2025-10-23 21:28:18,536 basehttp 8 139826916703032 "GET /favicon.ico HTTP/1.1" 404 3106
+INFO 2025-10-23 21:32:58,681 autoreload 8 139826986613544 /code/core/settings.py changed, reloading.
+INFO 2025-10-23 21:33:01,007 autoreload 14 140433706724136 Watching for file changes with StatReloader
+INFO 2025-10-23 21:34:44,011 autoreload 8 139943888259880 Watching for file changes with StatReloader
+INFO 2025-10-23 21:40:57,292 autoreload 7 139690795391784 Watching for file changes with StatReloader
+INFO 2025-10-23 21:43:17,094 autoreload 7 139690795391784 /code/core/settings.py changed, reloading.
+INFO 2025-10-23 21:45:07,473 autoreload 7 140602841803560 Watching for file changes with StatReloader
+INFO 2025-10-23 21:45:45,937 autoreload 7 140602841803560 /code/apps/usuarios/managers.py changed, reloading.
+INFO 2025-10-23 21:45:47,784 autoreload 10 140244670499624 Watching for file changes with StatReloader
+INFO 2025-10-23 21:46:12,537 autoreload 8 140484089629480 Watching for file changes with StatReloader
+INFO 2025-10-23 21:46:15,558 autoreload 8 140484089629480 /code/core/settings.py changed, reloading.
+INFO 2025-10-23 21:46:18,472 autoreload 11 140152802896680 Watching for file changes with StatReloader
+INFO 2025-10-23 21:46:26,216 autoreload 11 140152802896680 /code/apps/usuarios/managers.py changed, reloading.
+INFO 2025-10-23 21:46:32,226 autoreload 14 140215430421288 Watching for file changes with StatReloader
+INFO 2025-10-23 21:47:39,764 autoreload 14 140215430421288 /code/apps/usuarios/managers.py changed, reloading.
+INFO 2025-10-23 21:47:42,282 autoreload 17 140248895683368 Watching for file changes with StatReloader
+INFO 2025-10-23 21:48:59,317 autoreload 17 140248895683368 /code/apps/usuarios/urls.py changed, reloading.
+INFO 2025-10-23 21:49:01,330 autoreload 20 140637601217320 Watching for file changes with StatReloader
+INFO 2025-10-23 21:49:52,353 autoreload 20 140637601217320 /code/apps/usuarios/managers.py changed, reloading.
+INFO 2025-10-23 21:49:54,443 autoreload 23 140031507086120 Watching for file changes with StatReloader
+INFO 2025-10-23 21:50:03,547 autoreload 23 140031507086120 /code/apps/usuarios/managers.py changed, reloading.
+INFO 2025-10-23 21:50:05,360 autoreload 26 139989135362856 Watching for file changes with StatReloader
+INFO 2025-10-23 21:51:37,885 autoreload 26 139989135362856 /code/apps/usuarios/serializers.py changed, reloading.
+INFO 2025-10-23 21:51:40,630 autoreload 29 139789513554728 Watching for file changes with StatReloader
+INFO 2025-10-23 21:51:59,989 autoreload 29 139789513554728 /code/apps/usuarios/urls.py changed, reloading.
+INFO 2025-10-23 21:52:01,659 autoreload 32 139816808909608 Watching for file changes with StatReloader
+INFO 2025-10-23 21:52:09,878 autoreload 32 139816808909608 /code/apps/usuarios/urls.py changed, reloading.
+INFO 2025-10-23 21:52:12,209 autoreload 35 139804255107880 Watching for file changes with StatReloader
+INFO 2025-10-23 21:53:35,422 autoreload 35 139804255107880 /code/core/urls.py changed, reloading.
+INFO 2025-10-23 21:53:37,411 autoreload 38 140411594890024 Watching for file changes with StatReloader
+INFO 2025-10-23 21:54:40,756 autoreload 8 140590018943784 Watching for file changes with StatReloader
+WARNING 2025-10-23 21:54:44,265 log 8 140589953792824 Not Found: /
+WARNING 2025-10-23 21:54:44,269 basehttp 8 140589953792824 "GET / HTTP/1.1" 404 2942
+INFO 2025-10-23 21:54:53,057 autoreload 8 140590018943784 /code/core/urls.py changed, reloading.
+INFO 2025-10-23 21:54:56,962 autoreload 13 140179409312552 Watching for file changes with StatReloader
+INFO 2025-10-23 22:00:52,515 autoreload 8 140475052481320 Watching for file changes with StatReloader
+WARNING 2025-10-23 22:00:55,555 log 8 140474987285304 Not Found: /
+WARNING 2025-10-23 22:00:55,588 basehttp 8 140474987285304 "GET / HTTP/1.1" 404 2942
+WARNING 2025-10-23 22:00:59,561 log 8 140474987285304 Not Found: /login
+WARNING 2025-10-23 22:00:59,587 basehttp 8 140474987285304 "GET /login HTTP/1.1" 404 2975
+WARNING 2025-10-23 22:01:27,279 log 8 140474987285304 Method Not Allowed: /api/auth/token/
+WARNING 2025-10-23 22:01:27,286 basehttp 8 140474987285304 "GET /api/auth/token/ HTTP/1.1" 405 42
+WARNING 2025-10-23 22:01:43,571 log 8 140474982894392 Method Not Allowed: /api/auth/token/
+WARNING 2025-10-23 22:01:43,575 basehttp 8 140474982894392 "GET /api/auth/token/ HTTP/1.1" 405 42
+WARNING 2025-10-23 22:01:44,341 log 8 140474982894392 Not Found: /favicon.ico
+WARNING 2025-10-23 22:01:44,351 basehttp 8 140474982894392 "GET /favicon.ico HTTP/1.1" 404 2995
+INFO 2025-10-23 22:05:45,273 basehttp 8 140474982894392 "GET /swagger/ HTTP/1.1" 200 1550
+INFO 2025-10-23 22:05:45,423 basehttp 8 140474982894392 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2025-10-23 22:05:45,436 basehttp 8 140474979711800 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2025-10-23 22:05:45,445 basehttp 8 140474978650936 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2025-10-23 22:05:45,465 basehttp 8 140474981833528 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 143858
+INFO 2025-10-23 22:05:45,484 basehttp 8 140474982894392 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 14964
+INFO 2025-10-23 22:05:45,520 basehttp 8 140474980772664 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 324275
+INFO 2025-10-23 22:05:45,642 basehttp 8 140474983955256 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1086481
+INFO 2025-10-23 22:05:46,355 basehttp 8 140474983955256 "GET /swagger/?format=openapi HTTP/1.1" 200 3520
+INFO 2025-10-23 22:05:46,436 basehttp 8 140474980772664 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+WARNING 2025-10-23 22:05:58,209 log 8 140474980772664 Bad Request: /api/auth/login/
+WARNING 2025-10-23 22:05:58,216 basehttp 8 140474980772664 "POST /api/auth/login/ HTTP/1.1" 400 159
+WARNING 2025-10-23 22:06:13,344 log 8 140474980772664 Bad Request: /api/auth/login/
+WARNING 2025-10-23 22:06:13,348 basehttp 8 140474980772664 "POST /api/auth/login/ HTTP/1.1" 400 159
+WARNING 2025-10-23 22:06:49,957 log 8 140474980772664 Unauthorized: /api/auth/token/
+WARNING 2025-10-23 22:06:49,959 basehttp 8 140474980772664 "POST /api/auth/token/ HTTP/1.1" 401 63
+INFO 2025-10-23 22:08:03,556 basehttp 8 140474980772664 "GET /swagger/ HTTP/1.1" 200 1550
+INFO 2025-10-23 22:08:04,091 basehttp 8 140474980772664 "GET /swagger/?format=openapi HTTP/1.1" 200 3520
+INFO 2025-10-23 22:10:44,321 autoreload 8 140475052481320 /code/apps/usuarios/views.py changed, reloading.
+INFO 2025-10-23 22:10:46,102 autoreload 20 140705591401256 Watching for file changes with StatReloader
+INFO 2025-10-23 22:10:59,199 autoreload 20 140705591401256 /code/apps/usuarios/views.py changed, reloading.
+INFO 2025-10-23 22:11:00,807 autoreload 23 140642391460648 Watching for file changes with StatReloader
+INFO 2025-10-23 22:11:13,786 autoreload 23 140642391460648 /code/apps/usuarios/views.py changed, reloading.
+INFO 2025-10-23 22:11:15,468 autoreload 26 140088498563880 Watching for file changes with StatReloader
+INFO 2025-10-23 22:11:26,356 autoreload 26 140088498563880 /code/apps/usuarios/views.py changed, reloading.
+INFO 2025-10-23 22:11:28,108 autoreload 29 140290554968872 Watching for file changes with StatReloader
+INFO 2025-10-23 22:11:51,861 autoreload 8 140337458776872 Watching for file changes with StatReloader
+INFO 2025-10-23 22:11:59,693 basehttp 8 140337393322808 "GET /swagger/ HTTP/1.1" 200 1550
+INFO 2025-10-23 22:12:00,619 basehttp 8 140337393322808 "GET /swagger/?format=openapi HTTP/1.1" 200 6280
+ERROR 2025-10-23 22:12:28,056 log 8 140337393322808 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/code/apps/usuarios/views.py", line 137, in login_view
+    'access': str(access_token),
+  File "/usr/local/lib/python3.8/site-packages/rest_framework_simplejwt/tokens.py", line 82, in __str__
+    return token_backend.encode(self.payload)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework_simplejwt/backends.py", line 43, in encode
+    return token.decode('utf-8')
+AttributeError: 'str' object has no attribute 'decode'
+ERROR 2025-10-23 22:12:28,061 basehttp 8 140337393322808 "POST /api/auth/login/ HTTP/1.1" 500 16918
+WARNING 2025-10-23 22:19:09,435 log 8 140337393306424 Method Not Allowed: /api/auth/login/
+WARNING 2025-10-23 22:19:09,442 basehttp 8 140337393306424 "GET /api/auth/login/ HTTP/1.1" 405 42
+WARNING 2025-10-23 22:19:18,960 log 8 140337393306424 Bad Request: /api/auth/login/
+WARNING 2025-10-23 22:19:18,962 basehttp 8 140337393306424 "POST /api/auth/login/ HTTP/1.1" 400 159
+ERROR 2025-10-23 22:21:12,755 log 8 140337387993912 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/code/apps/usuarios/views.py", line 137, in login_view
+    'access': str(access_token),
+  File "/usr/local/lib/python3.8/site-packages/rest_framework_simplejwt/tokens.py", line 82, in __str__
+    return token_backend.encode(self.payload)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework_simplejwt/backends.py", line 43, in encode
+    return token.decode('utf-8')
+AttributeError: 'str' object has no attribute 'decode'
+ERROR 2025-10-23 22:21:12,759 basehttp 8 140337387993912 "POST /api/auth/login/ HTTP/1.1" 500 102659
+INFO 2025-10-23 22:22:04,152 autoreload 8 140337458776872 /code/apps/usuarios/serializers.py changed, reloading.
+INFO 2025-10-23 22:22:05,944 autoreload 17 140692431211304 Watching for file changes with StatReloader
+INFO 2025-10-23 22:22:22,842 autoreload 17 140692431211304 /code/apps/usuarios/serializers.py changed, reloading.
+INFO 2025-10-23 22:22:25,143 autoreload 20 140688660626216 Watching for file changes with StatReloader
+INFO 2025-10-23 22:22:43,607 autoreload 20 140688660626216 /code/core/settings.py changed, reloading.
+INFO 2025-10-23 22:22:45,515 autoreload 23 139649016785704 Watching for file changes with StatReloader
+INFO 2025-10-23 22:25:06,419 autoreload 8 140018271247144 Watching for file changes with StatReloader
+INFO 2025-10-23 22:25:10,104 autoreload 8 140018271247144 /code/core/settings.py changed, reloading.
+INFO 2025-10-23 22:25:15,194 autoreload 11 139988343151400 Watching for file changes with StatReloader
+ERROR 2025-10-23 22:25:21,098 log 11 139988277709624 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/code/apps/usuarios/views.py", line 137, in login_view
+    'access': str(access_token),
+  File "/usr/local/lib/python3.8/site-packages/rest_framework_simplejwt/tokens.py", line 82, in __str__
+    return token_backend.encode(self.payload)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework_simplejwt/backends.py", line 43, in encode
+    return token.decode('utf-8')
+AttributeError: 'str' object has no attribute 'decode'
+ERROR 2025-10-23 22:25:21,132 basehttp 11 139988277709624 "POST /api/auth/login/ HTTP/1.1" 500 102709
+ERROR 2025-10-23 22:26:13,625 log 11 139988277709624 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/code/apps/usuarios/views.py", line 137, in login_view
+    'access': str(access_token),
+  File "/usr/local/lib/python3.8/site-packages/rest_framework_simplejwt/tokens.py", line 82, in __str__
+    return token_backend.encode(self.payload)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework_simplejwt/backends.py", line 43, in encode
+    return token.decode('utf-8')
+AttributeError: 'str' object has no attribute 'decode'
+ERROR 2025-10-23 22:26:13,629 basehttp 11 139988277709624 "POST /api/auth/login/ HTTP/1.1" 500 102709
+INFO 2025-10-23 22:26:33,471 autoreload 8 140271102421800 Watching for file changes with StatReloader
+INFO 2025-10-23 22:26:42,038 basehttp 8 140271036988216 "GET /swagger/ HTTP/1.1" 200 1550
+INFO 2025-10-23 22:26:42,185 basehttp 8 140271036988216 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2025-10-23 22:26:42,211 basehttp 8 140271034538808 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2025-10-23 22:26:42,220 basehttp 8 140271035927352 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2025-10-23 22:26:42,234 basehttp 8 140271033477944 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2025-10-23 22:26:42,245 basehttp 8 140271032351544 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2025-10-23 22:26:42,248 basehttp 8 140271036988216 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2025-10-23 22:26:42,250 basehttp 8 140271031290680 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2025-10-23 22:26:42,976 basehttp 8 140271036988216 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2025-10-23 22:26:43,005 basehttp 8 140271031290680 "GET /swagger/?format=openapi HTTP/1.1" 200 6280
+INFO 2025-10-23 22:27:00,180 autoreload 8 140308723604264 Watching for file changes with StatReloader
+INFO 2025-10-23 22:27:05,931 basehttp 8 140308658150200 "GET /swagger/ HTTP/1.1" 200 1550
+INFO 2025-10-23 22:27:06,558 basehttp 8 140308658150200 "GET /swagger/?format=openapi HTTP/1.1" 200 6280
+WARNING 2025-10-23 22:27:34,832 log 8 140308658150200 Bad Request: /api/auth/login/
+WARNING 2025-10-23 22:27:34,836 basehttp 8 140308658150200 "POST /api/auth/login/ HTTP/1.1" 400 138
+ERROR 2025-10-23 22:27:46,079 log 8 140308653894456 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/code/apps/usuarios/views.py", line 137, in login_view
+    'access': str(access_token),
+  File "/usr/local/lib/python3.8/site-packages/rest_framework_simplejwt/tokens.py", line 82, in __str__
+    return token_backend.encode(self.payload)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework_simplejwt/backends.py", line 43, in encode
+    return token.decode('utf-8')
+AttributeError: 'str' object has no attribute 'decode'
+ERROR 2025-10-23 22:27:46,085 basehttp 8 140308653894456 "POST /api/auth/login/ HTTP/1.1" 500 102709
+WARNING 2025-10-23 22:27:55,949 log 8 140308653894456 Not Found: /api/auth/logi
+WARNING 2025-10-23 22:27:55,960 basehttp 8 140308653894456 "POST /api/auth/logi HTTP/1.1" 404 4377
+ERROR 2025-10-23 22:28:05,614 log 8 140308653894456 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/code/apps/usuarios/views.py", line 137, in login_view
+    'access': str(access_token),
+  File "/usr/local/lib/python3.8/site-packages/rest_framework_simplejwt/tokens.py", line 82, in __str__
+    return token_backend.encode(self.payload)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework_simplejwt/backends.py", line 43, in encode
+    return token.decode('utf-8')
+AttributeError: 'str' object has no attribute 'decode'
+ERROR 2025-10-23 22:28:05,617 basehttp 8 140308653894456 "POST /api/auth/login/ HTTP/1.1" 500 102709
+ERROR 2025-10-23 22:28:19,578 log 8 140308657543992 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/code/apps/usuarios/views.py", line 137, in login_view
+    'access': str(access_token),
+  File "/usr/local/lib/python3.8/site-packages/rest_framework_simplejwt/tokens.py", line 82, in __str__
+    return token_backend.encode(self.payload)
+  File "/usr/local/lib/python3.8/site-packages/rest_framework_simplejwt/backends.py", line 43, in encode
+    return token.decode('utf-8')
+AttributeError: 'str' object has no attribute 'decode'
+ERROR 2025-10-23 22:28:19,586 basehttp 8 140308657543992 "POST /api/auth/login/ HTTP/1.1" 500 16957
+INFO 2025-10-23 22:29:22,814 autoreload 8 140308723604264 /code/apps/usuarios/serializers.py changed, reloading.
+INFO 2025-10-23 22:29:25,323 autoreload 16 140116982340392 Watching for file changes with StatReloader
+INFO 2025-10-23 22:29:41,594 autoreload 16 140116982340392 /code/apps/usuarios/views.py changed, reloading.
+INFO 2025-10-23 22:29:44,260 autoreload 19 140451291216680 Watching for file changes with StatReloader
+INFO 2025-10-23 22:30:16,499 autoreload 19 140451291216680 /code/core/settings.py changed, reloading.
+INFO 2025-10-23 22:30:18,554 autoreload 22 140297076312872 Watching for file changes with StatReloader
+INFO 2025-10-23 22:30:30,628 autoreload 22 140297076312872 /code/core/settings.py changed, reloading.
+INFO 2025-10-23 22:30:32,424 autoreload 25 140356532693800 Watching for file changes with StatReloader
+INFO 2025-10-23 22:30:38,559 autoreload 25 140356532693800 /code/apps/usuarios/urls.py changed, reloading.
+INFO 2025-10-23 22:30:40,259 autoreload 28 140223684045608 Watching for file changes with StatReloader
+INFO 2025-10-23 22:31:01,421 autoreload 28 140223684045608 /code/apps/usuarios/urls.py changed, reloading.
+INFO 2025-10-23 22:31:03,225 autoreload 31 139914559331112 Watching for file changes with StatReloader
+INFO 2025-10-23 22:33:27,634 autoreload 8 139684403723048 Watching for file changes with StatReloader
+INFO 2025-10-23 22:34:08,396 autoreload 8 140311742204712 Watching for file changes with StatReloader
+INFO 2025-10-23 22:36:49,668 autoreload 7 140522707626792 Watching for file changes with StatReloader
+INFO 2025-10-23 22:37:00,560 autoreload 7 140522707626792 /code/core/settings.py changed, reloading.
+INFO 2025-10-23 22:37:02,826 autoreload 10 139632479402792 Watching for file changes with StatReloader
+INFO 2025-10-23 22:37:17,246 autoreload 10 139632479402792 /code/core/settings.py changed, reloading.
+INFO 2025-10-23 22:37:19,309 autoreload 13 139876588739368 Watching for file changes with StatReloader
+WARNING 2025-10-23 22:37:27,845 log 13 139876526193464 Bad Request: /api/auth/login/
+WARNING 2025-10-23 22:37:27,860 basehttp 13 139876526193464 "POST /api/auth/login/ HTTP/1.1" 400 138
+INFO 2025-10-23 22:37:40,098 autoreload 13 139876588739368 /code/apps/usuarios/serializers.py changed, reloading.
+INFO 2025-10-23 22:37:42,032 autoreload 18 139941892950824 Watching for file changes with StatReloader
+INFO 2025-10-23 22:37:46,721 basehttp 18 139941830421304 "POST /api/auth/login/ HTTP/1.1" 200 726
+INFO 2025-10-23 22:38:00,111 autoreload 18 139941892950824 /code/apps/usuarios/views.py changed, reloading.
+INFO 2025-10-23 22:38:02,266 autoreload 23 140347661876008 Watching for file changes with StatReloader
+INFO 2025-10-23 22:38:10,444 autoreload 23 140347661876008 /code/apps/usuarios/views.py changed, reloading.
+INFO 2025-10-23 22:38:12,331 autoreload 26 140121682078504 Watching for file changes with StatReloader
+INFO 2025-10-23 22:38:27,641 autoreload 26 140121682078504 /code/apps/usuarios/views.py changed, reloading.
+INFO 2025-10-23 22:38:29,506 autoreload 29 140193701505832 Watching for file changes with StatReloader
+INFO 2025-10-23 22:41:18,113 autoreload 8 140045514689320 Watching for file changes with StatReloader
+WARNING 2025-10-23 22:41:31,850 log 8 140045452323640 Bad Request: /api/auth/login/
+WARNING 2025-10-23 22:41:31,855 basehttp 8 140045452323640 "POST /api/auth/login/ HTTP/1.1" 400 138
+INFO 2025-10-23 22:41:41,275 basehttp 8 140045452323640 "POST /api/auth/login/ HTTP/1.1" 200 726
