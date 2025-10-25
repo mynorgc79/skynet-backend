@@ -31,6 +31,8 @@ urlpatterns = [
 
     # API endpoints
     path('api/usuarios/', include('apps.usuarios.urls')),
+    path('api/clientes/', include('apps.clientes.urls')),
+    path('api/visitas/', include('apps.visitas.urls')),
 
     # API Documentation
     path('swagger<format>/', schema_view.without_ui(cache_timeout=0),
