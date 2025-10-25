@@ -7,7 +7,8 @@ from . import views
 from .views import (
     login_view, logout_view, me_view, validate_token_view, change_password_view,
     usuarios_list_view, usuarios_create_view, usuarios_detail_view,
-    usuarios_update_view, usuarios_delete_view, usuarios_toggle_status_view
+    usuarios_update_view, usuarios_delete_view, usuarios_toggle_status_view,
+    tecnicos_list_view, supervisores_list_view, usuarios_stats_view
 )
 
 app_name = 'usuarios'
@@ -33,4 +34,9 @@ urlpatterns = [
     path('usuarios/<int:pk>/', usuarios_detail_view, name='usuarios_detail'),
     path('usuarios/', usuarios_list_view,
          name='usuarios_list'),  # Esta debe ir al final
+
+    # Endpoints de conveniencia para el frontend
+    path('tecnicos/', tecnicos_list_view, name='tecnicos_list'),
+    path('supervisores/', supervisores_list_view, name='supervisores_list'),
+    path('usuarios/stats/', usuarios_stats_view, name='usuarios_stats'),
 ]
