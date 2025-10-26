@@ -9,6 +9,7 @@ import os
 from pathlib import Path
 from datetime import timedelta
 import dj_database_url
+from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -18,14 +19,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ==============================================================================
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv(
-    'SECRET_KEY', 'django-insecure-gh-rq2*-vv_%qmd8nteh_mdi$2%6tq51fa6iy3an85y+8#*4mm')
+SECRET_KEY = config(
+    'SECRET_KEY', default='django-insecure-gh-rq2*-vv_%qmd8nteh_mdi$2%6tq51fa6iy3an85y+8#*4mm')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'True').lower() == 'true'
+DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = os.getenv(
-    'ALLOWED_HOSTS', 'localhost,127.0.0.1,0.0.0.0').split(',')
+ALLOWED_HOSTS = config(
+    'ALLOWED_HOSTS', default='localhost,127.0.0.1,0.0.0.0', cast=Csv())
 
 # ==============================================================================
 # DJANGO APPS
@@ -64,7 +65,6 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -110,17 +110,45 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # DATABASE CONFIGURATION
 # ==============================================================================
 
-# Default SQLite database for development
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# Configuración de base de datos con prioridades:
+# 1. DATABASE_URL (preferido para producción)
+# 2. Configuración individual (DB_NAME, DB_USER, etc.)
+# 3. SQLite para desarrollo local
 
-# Production database configuration via environment variable
-if os.getenv('DATABASE_URL'):
-    DATABASES['default'] = dj_database_url.parse(os.getenv('DATABASE_URL'))
+if config('DATABASE_URL', default=None):
+    # Production database configuration via environment variable (PRIMERA PRIORIDAD)
+    DATABASES = {
+        'default': dj_database_url.parse(config('DATABASE_URL'))
+    }
+    print("🗄️ Usando DATABASE_URL para conexión a base de datos")
+
+elif config('DB_NAME', default=None):
+    # Alternative individual database configuration (SEGUNDA PRIORIDAD)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': config('DB_NAME'),
+            'USER': config('DB_USER'),
+            'PASSWORD': config('DB_PASSWORD'),
+            'HOST': config('DB_HOST', default='localhost'),
+            'PORT': config('DB_PORT', default=5432, cast=int),
+            'OPTIONS': {
+                'sslmode': 'require',
+            },
+        }
+    }
+    print(
+        f"🗄️ Usando configuración individual: {config('DB_NAME')} en {config('DB_HOST')}")
+
+else:
+    # Development database configuration (TERCERA PRIORIDAD)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+    print("🗄️ Usando SQLite para desarrollo local")
 
 # ==============================================================================
 # CUSTOM USER MODEL
@@ -171,20 +199,14 @@ USE_L10N = True
 USE_TZ = True
 
 # ==============================================================================
-# STATIC FILES CONFIGURATION
+# STATIC & MEDIA FILES (MÍNIMO PARA API)
 # ==============================================================================
 
+# Solo configuración básica requerida por Django Admin
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = [BASE_DIR / 'static']
 
-# WhiteNoise configuration for static files
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-# ==============================================================================
-# MEDIA FILES CONFIGURATION
-# ==============================================================================
-
+# Media files (para futuros uploads de evidencias fotográficas)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
@@ -230,43 +252,22 @@ REST_FRAMEWORK = {
 
 # Configuración JWT manual
 JWT_SECRET_KEY = SECRET_KEY
-JWT_ACCESS_TOKEN_LIFETIME = timedelta(hours=24)
-JWT_REFRESH_TOKEN_LIFETIME = timedelta(days=7)
+JWT_ACCESS_TOKEN_LIFETIME = timedelta(hours=config(
+    'JWT_ACCESS_TOKEN_LIFETIME_HOURS', default=24, cast=int))
+JWT_REFRESH_TOKEN_LIFETIME = timedelta(days=config(
+    'JWT_REFRESH_TOKEN_LIFETIME_DAYS', default=7, cast=int))
 JWT_ALGORITHM = 'HS256'
 
-# SIMPLE_JWT = {
-#     'ACCESS_TOKEN_LIFETIME': timedelta(hours=24),
-#     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
-#     'ROTATE_REFRESH_TOKENS': True,
-#     'BLACKLIST_AFTER_ROTATION': True,
-#     'UPDATE_LAST_LOGIN': False,
-#     'ALGORITHM': 'HS256',
-#     'SIGNING_KEY': SECRET_KEY,
-#     'VERIFYING_KEY': None,
-#     'AUDIENCE': None,
-#     'ISSUER': None,
-#     'JWK_URL': None,
-#     'LEEWAY': 0,
-#     'AUTH_HEADER_TYPES': ('Bearer',),
-#     'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
-#     'USER_ID_FIELD': 'id',
-#     'USER_ID_CLAIM': 'user_id',
-#     'USER_AUTHENTICATION_RULE': 'rest_framework_simplejwt.authentication.default_user_authentication_rule',
-#     'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
-#     'TOKEN_TYPE_CLAIM': 'token_type',
-#     'JTI_CLAIM': 'jti',
-# }
 
 # ==============================================================================
 # CORS CONFIGURATION
 # ==============================================================================
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:4200",  # Angular dev server
-    "http://127.0.0.1:4200",
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-]
+CORS_ALLOWED_ORIGINS = config(
+    'CORS_ALLOWED_ORIGINS',
+    default='http://localhost:4200,http://127.0.0.1:4200,http://localhost:3000,http://127.0.0.1:3000',
+    cast=Csv()
+)
 
 CORS_ALLOW_CREDENTIALS = True
 
@@ -300,66 +301,33 @@ REDOC_SETTINGS = {
 }
 
 # ==============================================================================
-# EMAIL CONFIGURATION
-# ==============================================================================
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.gmail.com')
-EMAIL_PORT = int(os.getenv('EMAIL_PORT', '587'))
-EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True').lower() == 'true'
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', '')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
-DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'noreply@skynet.com')
-
-# ==============================================================================
-# GOOGLE MAPS CONFIGURATION
-# ==============================================================================
-
-GOOGLE_MAPS_API_KEY = os.getenv('GOOGLE_MAPS_API_KEY', '')
-
-# ==============================================================================
-# LOGGING CONFIGURATION
+# LOGGING CONFIGURATION (SIMPLIFICADO)
 # ==============================================================================
 
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
-        'verbose': {
-            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
-            'style': '{',
-        },
         'simple': {
-            'format': '{levelname} {message}',
+            'format': '{levelname} {asctime} {message}',
             'style': '{',
         },
     },
     'handlers': {
-        'file': {
-            'level': 'INFO',
-            'class': 'logging.FileHandler',
-            'filename': BASE_DIR / 'logs' / 'skynet.log',
-            'formatter': 'verbose',
-        },
         'console': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'logging.StreamHandler',
             'formatter': 'simple',
         },
     },
     'root': {
-        'handlers': ['console', 'file'],
+        'handlers': ['console'],
         'level': 'INFO',
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'file'],
+            'handlers': ['console'],
             'level': 'INFO',
-            'propagate': False,
-        },
-        'apps': {
-            'handlers': ['console', 'file'],
-            'level': 'DEBUG',
             'propagate': False,
         },
     },
@@ -369,8 +337,14 @@ LOGGING = {
 # SECURITY SETTINGS
 # ==============================================================================
 
-if not DEBUG:
-    # HTTPS settings
+# Configuraciones de seguridad más flexibles para desarrollo y producción
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = 'DENY'
+
+# Solo aplicar configuraciones SSL estrictas en producción real
+if not DEBUG and config('FORCE_SSL', default=False, cast=bool):
+    # HTTPS settings (solo si está explícitamente habilitado)
     SECURE_SSL_REDIRECT = True
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -379,13 +353,12 @@ if not DEBUG:
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
 
-    # Other security settings
-    SECURE_CONTENT_TYPE_NOSNIFF = True
-    SECURE_BROWSER_XSS_FILTER = True
-    X_FRAME_OPTIONS = 'DENY'
-
     # Session security
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_HTTPONLY = True
+    CSRF_COOKIE_HTTPONLY = True
+else:
+    # Configuración más relajada para desarrollo y testing
     SESSION_COOKIE_HTTPONLY = True
     CSRF_COOKIE_HTTPONLY = True
