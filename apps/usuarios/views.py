@@ -890,3 +890,179 @@ def usuarios_toggle_status_view(request, pk):
         'message': 'Estado del usuario cambiado exitosamente',
         'errors': []
     }, status=status.HTTP_200_OK)
+
+
+# ==============================================================================
+# ENDPOINTS CONVENIENTES PARA EL FRONTEND
+# ==============================================================================
+
+@swagger_auto_schema(
+    method='get',
+    operation_description="Obtener lista de técnicos activos",
+    operation_summary="Listar Técnicos",
+    responses={
+        200: openapi.Response(
+            description="Lista de técnicos",
+            examples={
+                "application/json": {
+                    "success": True,
+                    "data": [
+                        {
+                            "id": 1,
+                            "email": "tecnico@skynet.com",
+                            "nombre": "Juan",
+                            "apellido": "Pérez",
+                            "nombre_completo": "Juan Pérez",
+                            "telefono": "12345678",
+                            "rol": "TECNICO",
+                            "activo": True
+                        }
+                    ],
+                    "message": "Técnicos obtenidos exitosamente",
+                    "errors": []
+                }
+            }
+        )
+    },
+    tags=['Usuarios - Conveniencia']
+)
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def tecnicos_list_view(request):
+    """
+    Vista para obtener lista de técnicos activos
+    Endpoint de conveniencia para el frontend
+    """
+    # Solo técnicos activos
+    tecnicos = Usuario.objects.filter(
+        rol=Usuario.RolChoices.TECNICO,
+        activo=True
+    ).order_by('nombre', 'apellido')
+
+    serializer = UsuarioSerializer(tecnicos, many=True)
+
+    return Response({
+        'success': True,
+        'data': serializer.data,
+        'message': 'Técnicos obtenidos exitosamente',
+        'errors': []
+    }, status=status.HTTP_200_OK)
+
+
+@swagger_auto_schema(
+    method='get',
+    operation_description="Obtener lista de supervisores activos",
+    operation_summary="Listar Supervisores",
+    responses={
+        200: openapi.Response(
+            description="Lista de supervisores",
+            examples={
+                "application/json": {
+                    "success": True,
+                    "data": [
+                        {
+                            "id": 2,
+                            "email": "supervisor@skynet.com",
+                            "nombre": "María",
+                            "apellido": "García",
+                            "nombre_completo": "María García",
+                            "telefono": "87654321",
+                            "rol": "SUPERVISOR",
+                            "activo": True
+                        }
+                    ],
+                    "message": "Supervisores obtenidos exitosamente",
+                    "errors": []
+                }
+            }
+        )
+    },
+    tags=['Usuarios - Conveniencia']
+)
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def supervisores_list_view(request):
+    """
+    Vista para obtener lista de supervisores activos
+    Endpoint de conveniencia para el frontend
+    """
+    # Solo supervisores activos
+    supervisores = Usuario.objects.filter(
+        rol=Usuario.RolChoices.SUPERVISOR,
+        activo=True
+    ).order_by('nombre', 'apellido')
+
+    serializer = UsuarioSerializer(supervisores, many=True)
+
+    return Response({
+        'success': True,
+        'data': serializer.data,
+        'message': 'Supervisores obtenidos exitosamente',
+        'errors': []
+    }, status=status.HTTP_200_OK)
+
+
+@swagger_auto_schema(
+    method='get',
+    operation_description="Obtener estadísticas de usuarios por rol",
+    operation_summary="Estadísticas de Usuarios",
+    responses={
+        200: openapi.Response(
+            description="Estadísticas de usuarios",
+            examples={
+                "application/json": {
+                    "success": True,
+                    "data": {
+                        "total_usuarios": 10,
+                        "administradores": 2,
+                        "supervisores": 3,
+                        "tecnicos": 5,
+                        "activos": 8,
+                        "inactivos": 2
+                    },
+                    "message": "Estadísticas obtenidas exitosamente",
+                    "errors": []
+                }
+            }
+        )
+    },
+    tags=['Usuarios - Conveniencia']
+)
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def usuarios_stats_view(request):
+    """
+    Vista para obtener estadísticas de usuarios
+    Útil para dashboards del frontend
+    """
+    # Verificar permisos (solo administradores y supervisores)
+    if not (request.user.es_administrador or request.user.es_supervisor):
+        return Response({
+            'success': False,
+            'data': None,
+            'message': 'No tienes permisos para ver estadísticas',
+            'errors': ['Permisos insuficientes']
+        }, status=status.HTTP_403_FORBIDDEN)
+
+    total_usuarios = Usuario.objects.count()
+    administradores = Usuario.objects.filter(
+        rol=Usuario.RolChoices.ADMINISTRADOR).count()
+    supervisores = Usuario.objects.filter(
+        rol=Usuario.RolChoices.SUPERVISOR).count()
+    tecnicos = Usuario.objects.filter(rol=Usuario.RolChoices.TECNICO).count()
+    activos = Usuario.objects.filter(activo=True).count()
+    inactivos = Usuario.objects.filter(activo=False).count()
+
+    return Response({
+        'success': True,
+        'data': {
+            'total_usuarios': total_usuarios,
+            'administradores': administradores,
+            'supervisores': supervisores,
+            'tecnicos': tecnicos,
+            'activos': activos,
+            'inactivos': inactivos
+        },
+        'message': 'Estadísticas obtenidas exitosamente',
+        'errors': []
+    }, status=status.HTTP_200_OK)
