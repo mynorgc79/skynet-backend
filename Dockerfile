@@ -30,4 +30,4 @@ EXPOSE 8000
 # 2. Comando para iniciar el servidor Gunicorn.
 # DEBES reemplazar 'tu_proyecto' con el nombre de tu directorio de Django 
 # (el que contiene settings.py y wsgi.py).
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "tu_proyecto.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "core.wsgi:application"]
